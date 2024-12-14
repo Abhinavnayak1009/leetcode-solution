@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class array14 {
+	public static void last1(int a[]) {
+		int temp =a[0];
+		for ( int i=1; i<a.length; i++) {
+			a[i-1]=a[i];
+		}
+		a[a.length-1]=temp;
+		for (int i : a) {
+			System.out.print(i + "  ");
+		}
+	 
+		
+		
+	}
+	public static void last2(int a[] ) {
+//		for ( int i=1; i<a.length; i++) {
+//			a[i]=a[i-1]^a[i];
+//			a[i-1]=a[i-1]^a[i];
+//			a[i]=a[i-1]^a[i];
+//		}
+		 for (int i = 1; i < a.length; i++) {
+	            a[i] = a[i - 1] ^ a[i];
+	            a[i - 1] = a[i - 1] ^ a[i];
+	            a[i] = a[i - 1] ^ a[i];
+	        }
+		for (int i : a) {
+			System.out.print(i +"  ");
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n;
+		Scanner sc = new Scanner (System.in);
+		System.out.println("please enter the size of an array");
+		n= sc.nextInt();
+	int a[]= new int [n];
+	System.out.println("please enter the value of an array");
+	for (int i=0; i<n; i++) {
+		a[i] = sc.nextInt();
+//	} int temp =a[0];
+//	for ( int i=1; i<a.length; i++) {
+//		a[i-1]=a[i];
+//	}
+//	a[n-1]=temp;
+// 
+//	for (int i : a) {
+//		System.out.print(i + "  ");
+//	}
+	}
+		//last1(a);
+		System.out.println();
+		last2(a);
+	
+	}
+}
